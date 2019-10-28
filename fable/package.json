@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "npx webpack --mode production"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",

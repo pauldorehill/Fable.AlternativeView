@@ -25,7 +25,7 @@ printfn "Installing NPM packages"
 shellExecute "cd fable; npm install"
 
 printfn "Running webpack"
-shellExecute "cd fable; npx webpack"
+shellExecute "cd fable; npm run-script build"
 
 // Build Elm project
 

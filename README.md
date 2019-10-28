@@ -88,10 +88,10 @@ These were a very quick set of tests:
 
 Library | Build Mode | Size
 | --- | --- | --- |
-Preact | development | 1.05Mib
-Preact | production | 204 KiB
-React | development | 2.1Mib
-React | production | 318 KiB
+Preact | development | 717 KiB
+Preact | production | 57.7 KiB
+React | development | 1.75 Mib
+React | production | 172 KiB
 Elm | standard | 106 KiB
 Elm | optimized + minified | 23 KiB
 
