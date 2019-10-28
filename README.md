@@ -94,3 +94,5 @@ React | development | 2.1Mib
 React | production | 318 KiB
 Elm | standard | 106 KiB
 Elm | optimized + minified | 23 KiB
+
+Informative discussion on package size [Webpack Performance Budgets](https://github.com/webpack/webpack/issues/3216)
