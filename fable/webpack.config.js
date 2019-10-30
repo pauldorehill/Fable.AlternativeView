@@ -9,24 +9,23 @@ module.exports = {
     entry: "./src/Fable.Preact.fsproj",
     output: {
         path: path.join(__dirname, "./public"),
-        filename: "bundle.js",
+        filename: "bundle.js"
     },
     devServer: {
         contentBase: "./public",
-        port: 8080,
+        port: 8080
     },
     module: {
         rules: [{
             test: /\.fs(x|proj)?$/,
             use: "fable-loader"
-
         }]
     },
     resolve: {
         "alias": {
             "react": "preact/compat",
             "react-dom/test-utils": "preact/test-utils",
-            "react-dom": "preact/compat",
+            "react-dom": "preact/compat"
         }
     }
 }
