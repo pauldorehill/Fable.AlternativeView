@@ -1,68 +1,72 @@
-# Fable + Preact
+# Fable + Preact + Inferno
 
-Quick demo project on how to get [Fable](https://fable.io/) + [Preact](https://preactjs.com/) working. Also quickly compares to Elm.
+Demo projects on how to get [Fable](https://fable.io/) working with some alternative view rendering frameworks:
+ - [Preact](https://preactjs.com/)
+ - [Inferno](https://infernojs.org/)
 
-## 1. Install Preact
+Also quickly compares to [Elm](https://elm-lang.org/).
 
-```
+The basic steps are:
+
+1. Install alternative dom rendering framework
+2. Alias in webpack [config](https://webpack.js.org/configuration/)  (use of the `resolve` option)
+
+:bowtie:
+
+## Inferno
+
+Follow the [guide](https://infernojs.org/docs/guides/switching-to-inferno).
+
+Install
+
+```javascript
 npm remove react react-dom
-npm install preact preact-dom
+npm install inferno
+// Not sure how many of these are needed... works with just inferno
+// npm install inferno-compat
+// npm install inferno-clone-vnode
+// npm install inferno-create-class
+// npm install inferno-create-element
 ```
-#### package.json
+webpack.config.js
+
 ```json
 {
-  "private": true,
-  "scripts": {
-    "start": "webpack-dev-server"
-  },
-  "dependencies": {
-    "@babel/core": "^7.5.5",
-    "fable-compiler": "^2.3.19",
-    "fable-loader": "^2.1.8",
-    "preact": "^10.0.1",
-    "preact-dom": "^1.0.1",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.8.0"
-  }
-}
-```
-
-## 2. Setup aliasing in webpack
-Preact [aliasing](https://preactjs.com/guide/v10/getting-started#aliasing-in-webpack) + webpack [config](https://webpack.js.org/configuration/)  (use of the `resolve` option)
-#### webpack.config.js
-```js
-var path = require("path");
-
-module.exports = {
-    mode: "development",
-    entry: "./src/Fable.Preact.fsproj",
-    output: {
-        path: path.join(__dirname, "./public"),
-        filename: "bundle.js",
-    },
-    devServer: {
-        contentBase: "./public",
-        port: 8080,
-    },
-    module: {
-        rules: [{
-            test: /\.fs(x|proj)?$/,
-            use: "fable-loader"
-
-        }]
-    },
     resolve: {
         "alias": {
-            "react": "preact/compat",
-            "react-dom/test-utils": "preact/test-utils",
-            "react-dom": "preact/compat",
+            "react": "inferno-compat",
+            "react-dom": "inferno-compat"
         }
     }
 }
 ```
 
-## 3. Build + Run
+## Preact
+Follow the [guide](https://preactjs.com/guide/v10/getting-started#aliasing-in-webpack).
+
+Install
+
+```
+npm remove react react-dom
+npm install preact preact-dom
+```
+webpack.config.js
+
+```json
+{
+    resolve: {
+        "alias": {
+            "react": "preact/compat",
+            "react-dom/test-utils": "preact/test-utils",
+            "react-dom": "preact/compat"
+        }
+    }
+}
+```
+
+## Build + Run
+
+Go to the appropriate project folder and run:
 
 ```
 npm install
@@ -77,9 +81,18 @@ i ｢wdm｣: Compiled successfully.
 ```
 :satisfied:
 
+For elm:
+```
+cd src/elm
+elm reactor
+Go to http://localhost:8000 to see your project dashboard.
+```
+
+http://localhost:8000/src/Main.elm
+
 ## Build Script
 
-Open at terminal in `Fable.Preact` & run `dotnet fsi build.fsx`. This will build both the Fable and Elm projects (requires `npm` and `elm` to be installed).
+Open a terminal in `Fable.AlternativeView` & run `dotnet fsi build.fsx`. This will build all the projects (requires `npm` and `elm` to be installed).
 
 ## Package Sizes
 
@@ -89,11 +102,13 @@ These were a very quick set of tests:
 
 Library | Build Mode | Size
 | --- | --- | --- |
+Elm | standard | 106 KiB
+Elm | optimized + minified | 16 KiB
+Inferno | development | 829 KiB
+Inferno | production | 78.9 KiB
 Preact | development | 717 KiB
 Preact | production | 57.7 KiB
-React | development | 1.75 Mib
+React | development | 1750 Kib
 React | production | 172 KiB
-Elm | standard | 106 KiB
-Elm | optimized + minified | 23 KiB
 
 Informative discussion on package size [Webpack Performance Budgets](https://github.com/webpack/webpack/issues/3216)

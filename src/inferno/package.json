@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "npx webpack --mode production"
+  },
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "fable-compiler": "^2.3.19",
+    "fable-loader": "^2.1.8",
+    "inferno": "^7.3.2",
+    "inferno-clone-vnode": "^7.3.2",
+    "inferno-compat": "^7.3.2",
+    "inferno-create-class": "^7.3.2",
+    "inferno-create-element": "^7.3.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
