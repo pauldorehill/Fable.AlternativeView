@@ -1,4 +1,4 @@
-﻿module Fable.Preact
+﻿module Fable.Inferno
 
 open Elmish
 open Elmish.React
@@ -18,7 +18,7 @@ let update (msg : Msg) (model : Model) =
     | Increment -> model + 1
     | Decrement -> model - 1
 
-// Rendered with Preact
+// Rendered with Inferno
 let view (model : Model) dispatch =
   div []
       [ button [ OnClick (fun _ -> dispatch Increment) ] [ str "+" ]
