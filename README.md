@@ -92,7 +92,7 @@ http://localhost:8000/src/Main.elm
 
 ## Build Script
 
-Open a terminal in `Fable.AlternativeView` & run `dotnet fsi build.fsx`. This will build all the projects (requires `npm` and `elm` to be installed).
+Open a terminal in `Fable.AlternativeView` & run `dotnet fsi build.fsx`. This will build all the projects (requires `npm`, `uglify-js`, and `elm` to be installed).
 
 ## Package Sizes
 
@@ -111,4 +111,6 @@ Preact | production | 57.7 KiB
 React | development | 1750 Kib
 React | production | 172 KiB
 
-Informative discussion on package size [Webpack Performance Budgets](https://github.com/webpack/webpack/issues/3216)
+Informative discussion on package size [Webpack Performance Budgets](https://github.com/webpack/webpack/issues/3216).
+
+And for something [different](https://svelte.dev/).
