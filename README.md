@@ -88,8 +88,6 @@ elm reactor
 Go to http://localhost:8000 to see your project dashboard.
 ```
 
-http://localhost:8000/src/Main.elm
-
 ## Build Script
 
 Open a terminal in `Fable.AlternativeView` & run `dotnet fsi build.fsx`. This will build all the projects (requires `npm`, `uglify-js`, and `elm` to be installed).
