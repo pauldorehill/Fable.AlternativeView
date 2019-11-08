@@ -30,7 +30,7 @@ npm install inferno
 ```
 webpack.config.js
 
-```json
+```
 {
     resolve: {
         "alias": {
@@ -52,7 +52,7 @@ npm install preact preact-dom
 ```
 webpack.config.js
 
-```json
+```
 {
     resolve: {
         "alias": {
