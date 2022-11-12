@@ -14,7 +14,7 @@
     "inferno-create-class": "^7.3.2",
     "inferno-create-element": "^7.3.2",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.6",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.8.0"
   }
 }
